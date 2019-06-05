@@ -14,7 +14,9 @@
 
 8、用IDE打开文件，我用的是vscode
 
-src文件里是源代码，其中components为页面和组件，router为页面路由，apis是调接口
+src文件夹是源代码，其中components为页面和组件，router为页面路由，apis是调接口
+
+config文件夹中的index.js中的proxyTable可以设置跨域，target:""里为主机地址
 
 9、参考教程：
 

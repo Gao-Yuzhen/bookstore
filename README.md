@@ -1,21 +1,27 @@
-# vue-demo
+1、首先需要安装node.js
 
-> A Vue.js project
+2、安装vue-cli脚手架：npm install -g vue-cli
 
-## Build Setup
+3、然后在终端，文件目录下使用npm install安装依赖
 
-``` bash
-# install dependencies
-npm install
+4、安装elementUI：npm i element-ui -S
 
-# serve with hot reload at localhost:8080
-npm run dev
+5、安装vue-router：npm install vue-router
 
-# build for production with minification
-npm run build
+6、安装axios：npm install axios
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+7、然后使用npm run dev运行，即可在网页localhost:8080查看
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+8、用IDE打开文件，我用的是vscode
+
+src文件夹是源代码，其中components为页面和组件，router为页面路由，apis是调接口
+
+config文件夹中的index.js中的proxyTable可以设置跨域，target:""里为主机地址
+
+9、参考教程：
+
+https://blog.csdn.net/mao834099514/article/details/79138484
+
+https://element.eleme.cn/#/zh-CN/component/installation
+
+https://www.runoob.com/vue2/vue-routing.html

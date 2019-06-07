@@ -3,14 +3,14 @@
     <TopNav></TopNav>
     <HeaderNav></HeaderNav>
     <br/><br/><br/>
-    <el-row v-for="o in 3" :key="o" >
-      <el-col :span="4" v-for="(o, index) in 4" :key="o" :offset="index > 0 ? 1 : 2">
+    <el-row v-for="o in (quantity-quantity%4)/4" :key="o" >
+      <el-col span="4" v-for="(o, index) in 4" :key="o" :offset="index > 0 ? 1 : 2">
         <el-card :body-style="{ padding: '0px 11px' }" class="card">
-          <router-link to="/detail"><img src="..//../../static/book.jpg" class="image"></router-link>
+          <router-link to="/detail"><img :src="img" class="image"></router-link>
           <div style="padding: 14px;">           
-            <span><router-link to="/detail">title</router-link></span>
+            <span><router-link to="/detail">{{title}}</router-link></span>
           </div>
-          <span class="price">价格</span>
+          <span class="price">{{price}}</span>
           <br/><br/>
         </el-card> 
         <br/><br/> 
@@ -33,7 +33,10 @@ export default {
   },
   data() {
     return {
-      
+      img:'..//../../static/book.jpg',
+      quantity: 12,
+      title:'标题',
+      price:'价格'
     };
   },
   methods: {

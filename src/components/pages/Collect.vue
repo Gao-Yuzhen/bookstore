@@ -8,14 +8,14 @@
         <el-tabs v-model="activeName" @tab-click="handleClick" class="left">
           <el-tab-pane label="商品收藏" name="first">
             <br/>
-            <el-row v-for="o in 3" :key="o" >
+            <el-row v-for="o in (item_quantity-item_quantity%5)/5" :key="o" >
               <el-col :span="4" v-for="(o, index) in 5" :key="o" :offset="index > 0 ? 1 : 0">
                 <el-card :body-style="{ padding: '20px 11px' }" class="card">
-                  <router-link to="/detail"><img src="..//../../static/item.jpg" class="image"></router-link>
+                  <router-link to="/detail"><img :src="img" class="image"></router-link>
                   <div style="padding: 14px;">           
-                    <span><router-link to="/detail">title</router-link></span>
+                    <span><router-link to="/detail">{{title}}</router-link></span>
                   </div>
-                  <span class="price">价格</span>
+                  <span class="price">{{price}}</span>
                   <br/>
                 </el-card> 
                 <br/><br/> 
@@ -24,10 +24,10 @@
           </el-tab-pane>
           <el-tab-pane label="店铺收藏" name="second">
             <br/>
-            <div  v-for="o in 3" :key="o">
+            <div  v-for="o in store_quantity" :key="o">
               <el-card class="box-card">
                 <div>  
-                  <img src="..//../../static/item.jpg" class="image">
+                  <img :src="img" class="image">
                 </div>
                 <br/>
               </el-card>
@@ -56,8 +56,12 @@ export default {
   },
   data() {
     return {
-     activeName: 'first'
-
+     activeName: 'first',
+     img: '..//../../static/item.jpg',
+     item_quantity: 17,
+     store_quantity: 4,
+     title: '标题',
+     price: '价格',
     };
   },
   methods: {

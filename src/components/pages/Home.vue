@@ -3,18 +3,27 @@
     <TopNav></TopNav>
     <HeaderNav></HeaderNav>
     <el-row>
-      <el-col :span="5" offset="2">
+      <el-col span="5" offset="2">
         <div class="leftnav"><span><router-link to="/book">少儿童书</router-link></span></div>
         <div class="leftnav"><span><router-link to="/book">小说/文学/文艺</router-link></span></div>
         <div class="leftnav"><span><router-link to="/book">经管/励志/社科</router-link></span></div>
         <div class="leftnav"><span><router-link to="/book">考试教辅</router-link></span></div>
         <div class="leftnav"><span><router-link to="/book">进口/原版书/杂志</router-link></span></div>
       </el-col>
-      <el-col :span="14">
+      <el-col span="14">
         <div class="block">
           <el-carousel trigger="click" height="360px" autoplay=false>
-            <el-carousel-item v-for="item in 4" :key="item">
-              <h3>{{ item }}</h3>
+            <el-carousel-item>
+              <img src="../../../static/show1.jpg"/>
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="../../../static/show2.jpg"/>
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="../../../static/show3.jpg"/>
+            </el-carousel-item>
+            <el-carousel-item>
+              <img src="../../../static/show4.jpg"/>
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -32,11 +41,11 @@
       </el-col>
       <el-col :span="5" v-for="(o, index) in 3" :key="o" :offset="index > 0 ? 0 : 1">
         <el-card :body-style="{ padding:'0px 11px' }">
-          <router-link to="/detail"><img src="..//../../static/book.jpg" class="image"></router-link>
+          <router-link to="/detail"><img :src="img" class="image"></router-link>
           <div style="padding: 14px">
-            <span><router-link to="/detail">title</router-link></span>
+            <span><router-link to="/detail">{{title}}</router-link></span>
           </div>
-          <span class="price">价格</span>
+          <span class="price">{{price}}</span>
           <br/><br/>
         </el-card>
       </el-col>
@@ -53,11 +62,11 @@
       </el-col>
       <el-col :span="5" v-for="(o, index) in 3" :key="o" :offset="index > 0 ? 0 : 1">
         <el-card :body-style="{ padding:'0px 11px' }">
-          <router-link to="/detail"><img src="..//../../static/book.jpg" class="image"></router-link>
+          <router-link to="/detail"><img :src="img" class="image"></router-link>
           <div style="padding: 14px">
-            <span><router-link to="/detail">title</router-link></span>
+            <span><router-link to="/detail">{{title}}</router-link></span>
           </div>
-          <span class="price">价格</span>
+          <span class="price">{{price}}</span>
           <br/><br/>
         </el-card>
       </el-col>
@@ -74,11 +83,11 @@
       </el-col>
       <el-col :span="5" v-for="(o, index) in 3" :key="o" :offset="index > 0 ? 0 : 1">
         <el-card :body-style="{ padding:'0px 11px' }">
-          <router-link to="/detail"><img src="..//../../static/book.jpg" class="image"></router-link>
+          <router-link to="/detail"><img :src="img" class="image"></router-link>
           <div style="padding: 14px">
-            <span><router-link to="/detail">title</router-link></span>
+            <span><router-link to="/detail">{{title}}</router-link></span>
           </div>
-          <span class="price">价格</span>
+          <span class="price">{{price}}</span>
           <br/><br/>
         </el-card>
       </el-col>
@@ -96,11 +105,11 @@
       </el-col>
       <el-col :span="5" v-for="(o, index) in 3" :key="o" :offset="index > 0 ? 0 : 1">
         <el-card :body-style="{ padding:'0px 11px' }">
-          <router-link to="/detail"><img src="..//../../static/book.jpg" class="image"></router-link>
+          <router-link to="/detail"><img :src="img" class="image"></router-link>
           <div style="padding: 14px">
-            <span><router-link to="/detail">title</router-link></span>
+            <span><router-link to="/detail">{{title}}</router-link></span>
           </div>
-          <span class="price">价格</span>
+          <span class="price">{{price}}</span>
           <br/><br/>
         </el-card>
       </el-col>
@@ -117,11 +126,11 @@
       </el-col>
             <el-col :span="5" v-for="(o, index) in 3" :key="o" :offset="index > 0 ? 0 : 1">
         <el-card :body-style="{ padding:'0px 11px' }">
-          <router-link to="/detail"><img src="..//../../static/book.jpg" class="image"></router-link>
+          <router-link to="/detail"><img :src="img" class="image"></router-link>
           <div style="padding: 14px">
-            <span><router-link to="/detail">title</router-link></span>
+            <span><router-link to="/detail">{{title}}</router-link></span>
           </div>
-          <span class="price">价格</span>
+          <span class="price">{{price}}</span>
           <br/><br/>
         </el-card>
       </el-col>
@@ -143,7 +152,9 @@ export default {
   },
   data() {
     return {
-      
+      img: '..//../../static/book.jpg',
+      title: '标题',
+      price: '价格',
     };
   },
 
@@ -220,23 +231,6 @@ a{
   text-decoration:none;
   color: #949494;
 }
-.el-carousel__item h3 {
-  color: #475669;
-  font-size: 14px;
-  opacity: 0.75;
-  line-height: 150px;
-  margin: 0;
-}
-
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
-  
-.el-carousel__item:nth-child(2n+1) {
-  background-color: #d3dce6;
-}
-
-
 .time {
   font-size: 13px;
   color: #999;

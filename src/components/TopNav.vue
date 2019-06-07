@@ -1,33 +1,31 @@
 <template>
   <div class="topnav">
-    
-      
         <el-row>
-          <el-col :span="5" :offset="1">
-            <span class="top_1">欢迎来到xxx网上书店！</span>
+          <el-col span="5" offset="1">
+            <span class="top_1">欢迎来到淘书网上书店！</span>
           </el-col>
-          <el-col :span="1">
+          <el-col span="1">
             <span class="top"><router-link to="/login">登录</router-link></span>
           </el-col>
-          <el-col :span="1">
+          <el-col span="1">
             <span class="top"><router-link to="/register">注册</router-link></span>
           </el-col>
-          <el-col :span="2" :offset="5">
+          <el-col span="2" offset="5">
             <i class="el-icon-tickets"></i>
 
               <span class="top"><router-link to="/myOrder">我的订单</router-link></span>
           </el-col>
-          <el-col :span="2">
+          <el-col span="2">
             <i class="el-icon-star-off"></i>
 
               <span class="top"><router-link to="/myFavorite">收藏夹</router-link></span>
           </el-col>
-          <el-col :span="2">
+          <el-col span="2">
             <i class="el-icon-goods"></i>
 
               <span class="top"><router-link to="/shoppingCart">购物车</router-link></span>
           </el-col>
-          <el-col :span="2">
+          <el-col span="2">
             <i class="el-icon-news"></i>
 
               <span class="top"><router-link to="/store">卖家中心</router-link></span>

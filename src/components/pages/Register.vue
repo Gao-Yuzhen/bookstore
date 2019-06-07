@@ -2,8 +2,8 @@
   <div class="register">
     <TopNav></TopNav>
     <el-row>
-      <el-col :span="16" :offset="3">
-        <h1 class="logo"><router-link to="/home">logo</router-link></h1>
+      <el-col :span="16" :offset="2">
+        <router-link to="/home"><img src="../../../static/logo.png" class="logo"></router-link>
       </el-col>
     </el-row>
     <el-row>
@@ -161,5 +161,10 @@ a {
 .regbtn{
   width: 70%;
   margin-left: 15%;
+}
+.logo{
+  margin-top: 23px;
+  margin-bottom: 20px;
+  margin-left: 36px;
 }
 </style>

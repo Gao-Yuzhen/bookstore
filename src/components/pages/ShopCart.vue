@@ -26,24 +26,23 @@
               <el-col span="2" offset="1">
                 <span>金额</span>
               </el-col>
-              <el-checkbox v-model="checked" class="checkbox">全选</el-checkbox>
             </el-row>         
           </div>
         </el-card>
       </el-col>
     </el-row>
-    <el-row v-for="o in 3" :key="o">
+    <el-row v-for="o in quantity" :key="o">
       <el-col span="19" offset="2">
         <br/><br/>
         <el-card class="box-card leftcard">
           <div slot="header" class="clearfix">
-            <span>店铺名称</span>
-            <el-checkbox v-model="checked" class="checkbox"></el-checkbox>
+            <span>{{storename}}</span>
+            <el-checkbox v-model="checked[o]" class="checkbox"></el-checkbox>
           </div>
           <div>
-            <router-link to="/detail"><img src="../../../static/item.jpg" class="img"/></router-link>
-            <span><router-link to="/detail">title</router-link></span>
-            <el-checkbox v-model="checked" class="checkbox_item"></el-checkbox>
+            <router-link to="/detail"><img :src="img" class="img"/></router-link>
+            <span><router-link to="/detail">{{title}}</router-link></span>
+            <el-checkbox v-model="checked[o]" class="checkbox_item"></el-checkbox>
           </div>
         </el-card>
       </el-col>
@@ -66,7 +65,11 @@ export default {
   },
   data() {
     return {
-      checked:false
+      checked:[false],
+      quantity: 4,
+      storename:'店铺名称',
+      img:'../../../static/item.jpg',
+      title:'标题',
     };
   },
   methods: {

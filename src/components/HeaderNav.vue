@@ -1,13 +1,17 @@
 <template>
-  <div class="headernav">
-    
+  <div class="headernav">  
         <el-row>
-          <el-col :span="3" :offset="2">
-            <router-link to="/home">logo</router-link>
+          <el-col span="3" offset="2">
+            <div class="logo">
+              <router-link to="/home"><img src="../../static/logo.png"></router-link>
+            </div>
           </el-col>
-          <el-col :span="9" :offset="7">
-            <el-input class="search" v-model="searchTxt" placeholder="搜索图书/作者" suffix-icon="el-icon-search"></el-input>
-          </el-col>        
+          <el-col span="7" offset="7">
+            <el-input class="search left" v-model="searchTxt" placeholder="搜索图书/作者"></el-input>
+          </el-col>  
+          <el-col span="1">
+            <router-link to="/book"><el-button plain class="left">搜索</el-button></router-link>
+          </el-col>      
         </el-row>
     <div class="headerbottom">hh</div>
     
@@ -53,9 +57,16 @@ li {
   text-align: center;
   line-height: 30px;
 }
-
+.logo{
+  margin-left: 30px;
+  margin-top:23px;
+  height:105px;
+}
 a{
   text-decoration:none;
   color: #949494;
+}
+.left{
+  margin-left: 25px;
 }
 </style>

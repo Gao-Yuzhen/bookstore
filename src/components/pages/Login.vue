@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="headtop"> 
-      <h1 class="logo"><router-link to="/home">logo</router-link></h1>
+      <router-link to="/home"><img src="../../../static/logo.png"></router-link>
     </div>
     <el-row>
       <el-col :span="6" :offset="14">
@@ -53,7 +53,9 @@ a{
   line-height: 100px;
 }
 .headtop{
-  height:100px;
+  height:110px;
+  margin-left: 50px;
+  margin-top: 25px;
  
 }
 .el-row{
